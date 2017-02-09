@@ -121,10 +121,14 @@ $(document).ready(function () {
 
 <div id="how-to-use-example" class="section level3">
 <h3>How to use example</h3>
-<p><em>Please find original assignment description in the section after section below</em></p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD <em>Please find original assignment description in the section after section below</em></p>
+<p>Below you can find a how-to-use example.</p>
+<p>First, we initialize a matrix with random values:</p>
+<p>```{r} set.seed(78) # That makes random values generation reproducible in any environment =======</p>
 <p>Below you can find a how-to-use example.</p>
 <p>First, we initialize matrix with random values:</p>
 <pre class="{r}"><code>set.seed(78) # That makes rondom values generation reproducible in any environment
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; adecbe5a430352a589546bef23bb2dd3ce4100fb
 x = matrix(rnorm(16),4,4)</code></pre>
 <p>We created a 4x4 matrix with random values:</p>
 <pre class="{r}"><code>
@@ -138,8 +142,9 @@ x = matrix(rnorm(16),4,4)</code></pre>
 <p>Then we create a ‘special’ matrix passing x matrix there:</p>
 <pre class="{r}"><code>my_special_matrix = makeCacheMatrix(x)</code></pre>
 <p>To get an inverse matrix we call cacheSolve() function:</p>
-<pre class="{r}"><code>cacheSolve(my_special_matrix)</code></pre>
-<p>When we run it for a first time it calculetes and returns invers matrix:</p>
+<pre class="{r}"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+cacheSolve(my_special_matrix)</code></pre>
+<p>When we run it for a first time it calculetes and returns inverse matrix:</p>
 <pre class="{r}"><code>cacheSolve(my_special_matrix)
            [,1]        [,2]        [,3]        [,4]
 [1,] -0.3458991 -0.34268584  0.98255227 -0.52135330
@@ -154,9 +159,29 @@ getting cached data
 [2,] -0.8097965  0.05391836  0.49509609 -0.06449851
 [3,] -0.2215214 -0.41717068  0.05304204 -0.38982290
 [4,]  0.4665566  0.20824466 -0.52872320 -0.33483552</code></pre>
-</div>
-<div id="introduction" class="section level3">
-<h3>Introduction</h3>
+<p>======= cacheSolve(my_matrix) ```</p>
+<p>When we run it for a first time it calculetes and returns invers matrix:</p>
+<pre class="{r}"><code>cacheSolve(my_matrix)
+           [,1]       [,2]       [,3]       [,4]
+[1,] -15.791695 -17.700307  25.456905 -29.400270
+[2,]   6.537475   7.504773 -10.104677  12.053430
+[3,]  -2.542325  -3.047911   4.047696  -3.958177
+[4,]  -5.504834  -5.552161   8.216919  -9.141832</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>adecbe5a430352a589546bef23bb2dd3ce4100fb ### Introduction</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <p>This second programming assignment will require you to write an R function that is able to cache potentially time-consuming computations. For example, taking the mean of a numeric vector is typically a fast operation. However, for a very long vector, it may take too long to compute the mean, especially if it has to be computed repeatedly (e.g. in a loop). If the contents of a vector are not changing, it may make sense to cache the value of the mean so that when we need it again, it can be looked up in the cache rather than recomputed. In this Programming Assignment you will take advantage of the scoping rules of the R language and how they can be manipulated to preserve state inside of an R object.</p>
 </div>
 <div id="example-caching-the-mean-of-a-vector" class="section level3">

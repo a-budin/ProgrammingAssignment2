@@ -21,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
   # set the inverse of the matrix x.
   setinverse <- function(inverse = matrix()) 
   {
-        inverse_matrix <<- inverse
+    inverse_matrix <<- inverse
   }
   
   # returns the inverse_matrix.  Will be null if setinverse has not been called or
@@ -37,7 +37,7 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set = set, get = get,
        setinverse = setinverse,
        getinverse = getinverse)
-  }
+}
 
 
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
