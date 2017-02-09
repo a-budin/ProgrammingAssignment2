@@ -1,3 +1,58 @@
+### How to use example
+*Please find original assignment description in the section after section below*
+
+Below you can find a how-to-use example.
+
+First, we initialize a matrix with random values:
+
+```{r}
+set.seed(78) # That makes random values generation reproducible in any environment
+x = matrix(rnorm(16),4,4)
+```
+We created a 4x4 matrix with random values: 
+```{r}
+
+> x
+           [,1]       [,2]       [,3]        [,4]
+[1,]  0.7172775 -1.3264418 -0.7529957  0.01533141
+[2,]  0.2581460  1.1817348 -1.7523169  1.41050702
+[3,]  1.0750581 -0.3512413 -1.0943362 -0.33220262
+[4,] -0.5375775 -0.5586649 -0.4110222 -1.56337430
+
+```
+Then we create a 'special' matrix passing x matrix there:
+
+```{r}
+my_special_matrix = makeCacheMatrix(x)
+```
+
+To get an inverse matrix we call cacheSolve() function:
+
+```{r}
+cacheSolve(my_special_matrix)
+```
+
+When we run it for a first time it calculetes and returns inverse matrix:
+
+```{r}
+cacheSolve(my_special_matrix)
+           [,1]        [,2]        [,3]        [,4]
+[1,] -0.3458991 -0.34268584  0.98255227 -0.52135330
+[2,] -0.8097965  0.05391836  0.49509609 -0.06449851
+[3,] -0.2215214 -0.41717068  0.05304204 -0.38982290
+[4,]  0.4665566  0.20824466 -0.52872320 -0.33483552
+```
+
+When we repeat function call with the same special matrix it returns inverse matrix from cache:
+```{r}
+> cacheSolve(my_special_matrix)
+getting cached data
+           [,1]        [,2]        [,3]        [,4]
+[1,] -0.3458991 -0.34268584  0.98255227 -0.52135330
+[2,] -0.8097965  0.05391836  0.49509609 -0.06449851
+[3,] -0.2215214 -0.41717068  0.05304204 -0.38982290
+[4,]  0.4665566  0.20824466 -0.52872320 -0.33483552
+```
 ### Introduction
 
 This second programming assignment will require you to write an R
