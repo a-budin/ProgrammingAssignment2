@@ -1,3 +1,48 @@
+### How to use example
+
+Below you can find a how-to-use example.
+
+First, we initialize matrix with random values:
+
+```{r}
+set.seed(78) # That makes rondom values generation reproducible in any environment
+x = matrix(rnorm(16),4,4)
+```
+We created a 4x4 matrix with random values: 
+```{r}
+
+> x
+           [,1]       [,2]       [,3]        [,4]
+[1,]  0.7172775 -1.3264418 -0.7529957  0.01533141
+[2,]  0.2581460  1.1817348 -1.7523169  1.41050702
+[3,]  1.0750581 -0.3512413 -1.0943362 -0.33220262
+[4,] -0.5375775 -0.5586649 -0.4110222 -1.56337430
+
+```
+Then we create a 'special' matrix passing x matrix there:
+
+```{r}
+my_special_matrix = makeCacheMatrix(x)
+```
+
+To get an inverse matrix we call cacheSolve() function:
+
+```{r}
+cacheSolve(my_matrix)
+```
+
+When we run it for a first time it calculetes and returns invers matrix:
+
+```{r}
+cacheSolve(my_matrix)
+           [,1]       [,2]       [,3]       [,4]
+[1,] -15.791695 -17.700307  25.456905 -29.400270
+[2,]   6.537475   7.504773 -10.104677  12.053430
+[3,]  -2.542325  -3.047911   4.047696  -3.958177
+[4,]  -5.504834  -5.552161   8.216919  -9.141832
+```
+
+
 ### Introduction
 
 This second programming assignment will require you to write an R
